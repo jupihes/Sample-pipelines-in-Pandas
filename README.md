@@ -3,8 +3,14 @@
 
 
 
-
-| Tables   |   Action 1    |Action 2|
+### General tasks
+|    |   Action 1    |Action 2|
 |----------|:-------------:|------:|
-|FTP | Read | Write| 
-|SQL | Read | Write| 
+| FTP | Read | Write| 
+| SQL | Read | Write| 
+
+### OS related
+|    |   Action 1    |Action 2|
+|----------|:-------------:|------:|
+| File | Make | delete |
+| Folder| Make | delete  |
