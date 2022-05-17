@@ -16,7 +16,18 @@
 | Folder| Make | delete  |
 
 
-![database](https://pynative.com/python/databases/)
+![Python MySQL database Guide](https://pynative.com/python/databases/)
+
+- Python MySQL Connection Guide
+- Python MySQL Insert
+- Python MySQL Select
+- Python MySQL Update
+- Python MySQL Delete
+- Call MySQL Stored Procedure
+- Python MySQL Parameterized Query
+- Python MySQL Transactions
+- Python MySQL Connection Pooling
+- Python MySQL BLOB
 
 ```python
 
