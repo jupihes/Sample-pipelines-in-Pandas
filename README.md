@@ -198,6 +198,21 @@ df = (
 )
 
 df.head()
+
+
+column_names = {'Date': 'date', 'Start (ET)': 'start',
+                'Unamed: 2': 'box', 'Visitor/Neutral': 'away_team', 
+                'PTS': 'away_points', 'Home/Neutral': 'home_team',
+                'PTS.1': 'home_points', 'Unamed: 7': 'n_ot'}
+
+games = (games.rename(columns=column_names)
+    .dropna(thresh=4)
+    [['date', 'away_team', 'away_points', 'home_team', 'home_points']]   # column selection
+    .assign(date=lambda x: pd.to_datetime(x['date'], format='%a, %b %d, %Y'))
+    .set_index('date', append=True)                                      # set index
+    .rename_axis(["game_id", "date"])                                    # rename axis
+    .sort_index()                                                        # sort index
+    )
 ```
 
 
