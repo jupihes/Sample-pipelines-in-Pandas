@@ -111,7 +111,7 @@ database_connection.close()
 
 ```python
 def read(fp):
-    df = (pd.read_csv(fp)   # basic read file
+    df = (pd.read_csv(fp, usecols= [])   # basic read file. It is highly recommended to use `read_csv` features.  
             .rename(columns=str.lower) # rename columns or change all to lower or upper
             .rename(columns= {'server ip':'ip', 'total traffic':'traffic'}) # rename columns or change all to lower or upper
             .drop('unnamed: 36', axis=1) # drop column or drop row  
