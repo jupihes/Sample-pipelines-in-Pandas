@@ -16,18 +16,28 @@
 | Folder| Make | delete  |
 
 
-![Python MySQL database Guide](https://pynative.com/python/databases/)
 
-- Python MySQL Connection Guide
-- Python MySQL Insert
-- Python MySQL Select
-- Python MySQL Update
-- Python MySQL Delete
-- Call MySQL Stored Procedure
-- Python MySQL Parameterized Query
-- Python MySQL Transactions
-- Python MySQL Connection Pooling
-- Python MySQL BLOB
+### Python Database ![Python MySQL database Guide](https://pynative.com/python/databases/)
+
+Learn how to perform Database operations from Python.
+
+![Python SQLite](https://pynative.com/python-sqlite/): Develop Python applications with the SQLite database to perform SQLite operations.
+
+Python MySQL: Perform all MySQL database operations from Python using MySQL Connector Python.
+
+    - Python MySQL Connection Guide
+    - Python MySQL Insert
+    - Python MySQL Select
+    - Python MySQL Update
+    - Python MySQL Delete
+    - Call MySQL Stored Procedure
+    - Python MySQL Parameterized Query
+    - Python MySQL Transactions
+    - Python MySQL Connection Pooling
+    - Python MySQL BLOB
+
+Python PostgreSQL: Develop Python applications with the PostgreSQL server to perform PostgreSQL database operations using psycopg2.
+
 
 ```python
 
