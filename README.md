@@ -155,6 +155,51 @@ def time_to_datetime(df, columns):
     return df
 ```
 
+```python
+
+
+https://colab.research.google.com/github/gardnmi/blog/blob/master/_notebooks/2021-08-22-chaining-in-pandas.ipynb#scrollTo=HJKjYCTtSOyw
+# CHAINING
+df = raw_df.copy()
+df = (
+    df
+    .set_index('PassengerId')
+    .assign(
+        Title=df.Name.str.extract('([A-Za-z]+)\.')
+    )
+    .assign(Title=lambda df:
+            np.select(
+                condlist=(df.Title.isin(['Mlle', 'Ms']),
+                          df.Title.isin(['Mme', 'Mrs']),
+                          df.Title.isin(['Mr'])),
+                choicelist=('Miss', 'Mrs', 'Mr'),
+                default='Rare'),
+
+            Age_bin=pd.cut(
+                df['Age'],
+                bins=[0, 12, 20, 40, 120],
+                labels=['Children', 'Teenage', 'Adult', 'Elder']),
+
+            Fare_bin=pd.cut(
+                df['Fare'],
+                bins=[0, 7.91, 14.45, 31, 120],
+                labels=['Low_fare', 'median_fare', 'Average_fare', 'high_fare'])
+            )
+    .assign(
+        Age_bin=lambda df: df.Age_bin.astype('category'),
+        Fare_bin=lambda df: df.Fare_bin.astype('category')
+    )
+    .drop(['Age', 'Fare', 'Name', 'Ticket', 'Cabin'], axis=1)
+    .query('Survived == 0')
+
+    ## NEW SECTION ##
+    .pipe(lambda df: pd.get_dummies(df, columns=["Sex", "Title", "Age_bin", "Embarked", "Fare_bin"]))
+
+)
+
+df.head()
+```
+
 
 ```python
 https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html 
