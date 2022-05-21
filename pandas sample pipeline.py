@@ -1,26 +1,34 @@
 
 # Mehdi Sample 1 - "Market Place" Cleaning
-def read(input_csv):
+import pandas as pd
+from os import chdir
+
+chdir('D:/.../Sample pipeline')
+
+def data_cleaning(input_csv):
     df = (pd.read_csv(input_csv, parse_dates=['date', 'transaction_date'])   # basic read file. It is highly recommended to use `read_csv` features.  
             .rename(columns=str.lower) # rename columns or change all to lower or upper
             .rename(columns= {'date':'date_key', 'customer_msisdn':'msisdn_nsk'}) # rename columns or change all to lower or upper
             .drop('payment_id', axis=1) # drop column or drop row
             .assign(date_key=lambda x: x['date_key'].dt.strftime('%Y%m%d'),  # make new columns from existintg - useful for calculation, data_time, change to categorical
                     msisdn_nsk_clean=lambda x: x['msisdn_nsk'].astype(str).str[2:],
-                    junk_msisdn=lambda x: x['msisdn_nsk'].astype(str).str[2:])
-            .query('delearname in ("SNAPCAB", "SNAPFOOD", "SNAPMARKET")')
+                    msisdn_lastdigit=lambda x: x['msisdn_nsk'].astype(str).str[-1],
+                    temp_hour=lambda x: x['transaction_date'].dt.hour)
+            .query('delearname in ("SNAPCAB", "SNAPFOOD", "SNAPMARKET")')   # filtering on column with `in`
             #.sort_values(by = ['granted_gift_irr'], ascending=False)
-            .assign(rank=lambda x: x.sort_values(['granted_gift_irr'], ascending=False)
-                    .groupby(['date_key'])
+            .assign(rank=lambda x: x.sort_values(['granted_gift_irr', 'msisdn_lastdigit','temp_hour'], #  make rank based on 3 columns; similar to `SQL` partition by
+                                                 ascending=(False, True, True)
+                                                 )
+                    .groupby(['date_key', 'msisdn_lastdigit'])
                     .cumcount()
                     + 1    
                     )
             #.query("rank < 3")
-            .sort_values(["date_key", "rank"])
+            .sort_values(["date_key", "rank"])  # sort values
           )
     return df
     
-df = read('marketplace_cashback_20perc_20220517.csv')
+df = data_cleaning('marketplace_cashback_20perc_20220517.csv')
 
 
 
