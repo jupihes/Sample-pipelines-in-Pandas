@@ -6,7 +6,7 @@
 ### General tasks
 |    |   Action 1    |Action 2|
 |----------|:-------------:|------:|
-| FTP | Read | Write| 
+| FTP | ![Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp_read.py) | Write| 
 | SFTP | Read | Write| 
 | ![SQL](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/SQL%20via%20python.py) | Read | Write| 
 |Pandas| Pipline for read, transform and write ![Link](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)|
