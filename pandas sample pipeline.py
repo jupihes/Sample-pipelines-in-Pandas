@@ -31,7 +31,23 @@ def data_cleaning(input_csv):
 df = data_cleaning('marketplace_cashback_20perc_20220517.csv')
 
 
+# Reordering, reindexing, and sorting data
+df[df.datatype == 'TAVG']. nlargest(n=10, columns='temp_C')
 
+.sort_index()
+
+'''Both sort_index()  and sort_values()  return new DataFrame
+objects. We must pass in inplace=True to update the dataframe we are
+working with.
+'''
+
+# sample for filtering output using `isin` amd `query`
+df[df.ENODEBID.isin(duplicate_ENB.query('ENODEBID > 1')['index'])].to_excel('duplicate ENB list.xlsx')
+
+
+### Reshaping data
+Transposing 
+Pivoting 
 ##############################################
 
 def read(fp):
