@@ -11,9 +11,14 @@ def data_cleaning(input_csv):
             .rename(columns= {'date':'date_key', 'customer_msisdn':'msisdn_nsk'}) # rename columns or change all to lower or upper
             .drop('payment_id', axis=1) # drop column or drop row
             .assign(date_key=lambda x: x['date_key'].dt.strftime('%Y%m%d'),  # make new columns from existintg - useful for calculation, data_time, change to categorical
-                    msisdn_nsk_clean=lambda x: x['msisdn_nsk'].astype(str).str[2:],
-                    msisdn_lastdigit=lambda x: x['msisdn_nsk'].astype(str).str[-1],
-                    temp_hour=lambda x: x['transaction_date'].dt.hour)
+                    msisdn_nsk_clean=lambda x: x['msisdn_nsk'].astype(str).str[2:],  # get rid of the first 2 digits - substr in SQL
+                    msisdn_lastdigit=lambda x: x['msisdn_nsk'].astype(str).str[-1],  # extract last digit to be used
+                    msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # add text - Concatenate in SQL
+                    
+                    # msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # regex usecase sample to be added
+                    
+                    
+                    temp_hour=lambda x: x['transaction_date'].dt.hour)  # extract hour 
             .query('delearname in ("SNAPCAB", "SNAPFOOD", "SNAPMARKET")')   # filtering on column with `in`
             #.sort_values(by = ['granted_gift_irr'], ascending=False)
             .assign(rank=lambda x: x.sort_values(['granted_gift_irr', 'msisdn_lastdigit','temp_hour'], #  make rank based on 3 columns; similar to `SQL` partition by
