@@ -1,3 +1,5 @@
+Connect to FTP and read files
+```python
 # based on what I saw at http://code.activestate.com/recipes/327141-simple-ftp-directory-synch/
 def moveFTPFiles(remotePath = '/.', serverName = '10.233.14.1',userName ='user1' ,\
                  passWord ='!QAZ',localPath =  r'D:/dump files
@@ -76,3 +78,23 @@ oneday = datetime.timedelta(days=1)
 yesterday = (datetime.date.today() - oneday).strftime('%Y%m%d') # 20220521
 
 #.strftime("%F") # '2022-05-21'
+```
+
+Move prepared file, , to FTP location
+
+```python
+from ftplib import FTP
+from datetime import datetime
+
+ftp = FTP('10.110.111.112') 
+ftp.login(user = 'user1', passwd= '....') 
+ftp.cwd('/home/defualt_reports/csv/CDM Daily Report')
+# now = datetime.now() # current date and time
+# month = now.strftime("%m")
+# day = now.strftime("%d")
+today_date = datetime.now().strftime("%Y%m%d") # make date as YYYYMMDD like '20220530'
+
+filename = 'CDM_List-' + today_date + '.xlsx' # making file name to be 'CDM_List'
+ftp.storbinary('STOR '+filename, open('CDM_List.xlsx', 'rb'))
+ftp.quit()
+```
