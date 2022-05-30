@@ -1,4 +1,4 @@
-Connect to FTP and read files
+### Connect to FTP and read files
 ```python
 # based on what I saw at http://code.activestate.com/recipes/327141-simple-ftp-directory-synch/
 def moveFTPFiles(remotePath = '/.', serverName = '10.233.14.1',userName ='user1' ,\
@@ -80,7 +80,7 @@ yesterday = (datetime.date.today() - oneday).strftime('%Y%m%d') # 20220521
 #.strftime("%F") # '2022-05-21'
 ```
 
-Move prepared file, , to FTP location
+### Move prepared file, 'CDM_List.xlsx', with adding date in YYYYMMDD to file name to FTP location
 
 ```python
 from ftplib import FTP
