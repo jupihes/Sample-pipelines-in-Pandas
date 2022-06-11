@@ -35,7 +35,7 @@ def data_cleaning(input_csv):
     
 df = data_cleaning('marketplace_cashback_20perc_20220517.csv')
 
-
+###################################################################
 # Reordering, reindexing, and sorting data
 df[df.datatype == 'TAVG']. nlargest(n=10, columns='temp_C')
 
