@@ -100,3 +100,20 @@ filename = 'CDM_List-' + today_date + '.xlsx' # making file name to be 'CDM_List
 ftp.storbinary('STOR '+filename, open('CDM_List.xlsx', 'rb'))
 ftp.quit()
 ```
+
+
+```python
+def writefile(ftp_add='10.110.111.112', username='user1', password='pass1', folder_add='/home/defualt_reports/csv/CDM Daily Report',file_name=, date_format="%Y%m%d"):
+  from ftplib import FTP
+  from datetime import datetime
+
+  ftp = FTP(ftp_add) 
+  ftp.login(user = username, passwd=password ) 
+  ftp.cwd(folder_add)
+
+  today_date = datetime.now().strftime(date_format) # make date as YYYYMMDD like '20220530'
+
+  filename = 'CDM_List-' + today_date + '.xlsx' # making file name to be 'CDM_List'
+  ftp.storbinary('STOR '+filename, open('CDM_List.xlsx', 'rb'))
+  ftp.quit()
+  return True
