@@ -1,12 +1,14 @@
 # Sample-pipelines-in-Pandas
 
+In this repository, we aim to provide sample for different tasks like those mention in below table.
 
+different
 
 
 ### General tasks
 |    |   Action 1    |Action 2|
 |----------|:-------------:|------:|
-| FTP | ![Read]([https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp_read.py](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#connect-to-ftp-and-read-files)) | ![Write](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#move-prepared-file-cdm_listxlsx-with-adding-date-in-yyyymmdd-to-file-name-to-ftp-location)| 
+| FTP | [Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#read-files-from-ftp) | [Write](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#write-file-to-ftp)| 
 | SFTP | Read | Write| 
 | ![SQL](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/SQL%20via%20python.py) | Read | Write| 
 |Pandas| ![Pipline for read & clean](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)|
