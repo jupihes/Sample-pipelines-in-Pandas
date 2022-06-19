@@ -2,9 +2,11 @@
 Option for `remote path`, `local path`, `file deletion` 
 ```python
 # based on what I saw at http://code.activestate.com/recipes/327141-simple-ftp-directory-synch/
-def moveFTPFiles(remotePath = '/.', serverName = '10.233.14.1',userName ='user1' ,\
-                 passWord ='!QAZ',localPath =  r'D:/dump files
-                 deleteRemoteFiles=False,onlyDiff= True):
+def moveFTPFiles(remotePath = './CV/', 
+                 serverName = '10.132.57.???', userName ='...' ,
+                 passWord ='...', localPath =  'E:/Reports/Cashback/',
+                 deleteRemoteFiles=False, onlyDiff=False, 
+                 transFile='marketplace_cashback_20perc_'):
     """Connect to an FTP server and bring down files to a local directory"""
     import os
     #from sets import Set
@@ -16,15 +18,28 @@ def moveFTPFiles(remotePath = '/.', serverName = '10.233.14.1',userName ='user1'
     ftp.login(userName,passWord)
     ftp.cwd(remotePath)
     
+    ## with file name containing date
+    import datetime
+    oneday = datetime.timedelta(days=1)
+    yesterday = (datetime.date.today() - oneday).strftime('%Y%m%d') # 20220618
+    
+    transfer_file = transFile + yesterday + '.csv'
+    
     try:
         print("Connecting...")
+        
         if onlyDiff:
-            lFileSet = Set(os.listdir(localPath))
-            rFileSet = Set(ftp.nlst())
+            lFileSet = set(os.listdir(localPath))
+            rFileSet = set(ftp.nlst())
             transferList = list(rFileSet - lFileSet)
             print("Missing: " + str(len(transferList)))
         else:
-            transferList = ftp.nlst()
+            if transFile:
+                transferList = [transfer_file]
+            else:
+                transferList = ftp.nlst()
+        
+        
         delMsg = ""	
         filesMoved = 0
         for fl in transferList:
@@ -54,27 +69,54 @@ def moveFTPFiles(remotePath = '/.', serverName = '10.233.14.1',userName ='user1'
 def timeStamp():
     """returns a formatted current time/date"""
     import time
-    return str(time.strftime("%a %d %b %Y %I:%M:%S %p"))
+    return str(time.strftime("%Y%m%d")) #str(time.strftime("%a %d %b %Y %I:%M:%S %p"))
 
-if __name__ == '__main__':
-    #--- constant connection values
-    ftpServerName = "ftpservername.com" # or IP address if Address Resulotion work on server 
-    ftpU = "ftpusername"
-    ftpP = "ftppassword"
-    remoteDirectoryPath = "remote/ftp/subdirectory"
-    localDirectoryPath = """local\sub\directory"""
+
+#.strftime("%F") # '2022-05-21'
+
+# if __name__ == '__main__':
+#     #--- constant connection values
+#     ftpServerName = "ftpservername.com" # or IP address if Address Resulotion work on server 
+#     ftpU = "ftpusername"
+#     ftpP = "ftppassword"
+#     remoteDirectoryPath = "remote/ftp/subdirectory"
+#     localDirectoryPath = """local\sub\directory"""
     
-    print("\n-- Retreiving Files----\n")
+#     print("\n-- Retreiving Files----\n")
     
-    deleteAfterCopy = False 	#set to true if you want to clean out the remote directory
-    onlyNewFiles = True			#set to true to grab & overwrite all files locally
-    moveFTPFiles(ftpServerName,ftpU,ftpP,remoteDirectoryPath,localDirectoryPath,deleteAfterCopy,onlyNewFiles)
+#     deleteAfterCopy = False 	#set to true if you want to clean out the remote directory
+#     onlyNewFiles = True			#set to true to grab & overwrite all files locally
+#     moveFTPFiles(ftpServerName,ftpU,ftpP,remoteDirectoryPath,localDirectoryPath,deleteAfterCopy,onlyNewFiles)
+
+# file transfer1
+moveFTPFiles(remotePath = './CV/', 
+                 serverName = '10.132.57.???', userName ='...' ,
+                 passWord ='...', localPath =  'E:/Reports/Cashback/',
+                 deleteRemoteFiles=False, onlyDiff=False, 
+                 transFile='marketplace_cashback_20perc_')
 
 
-moveFTPFiles()
+moveFTPFiles(remotePath = './CV/', 
+                 serverName = '10.132.57.???', userName ='...' ,
+                 passWord ='...', localPath =  'E:/Reports/Cashback/',
+                 deleteRemoteFiles=False, onlyDiff=False,  
+                 transFile='DIRECT_CHANNEL_CASHBACK_')
 
+
+moveFTPFiles(remotePath = './CV/', 
+                 serverName = '10.132.57.???', userName ='...' ,
+                 passWord ='...', localPath =  'E:/Reports/Cashback/',
+                 deleteRemoteFiles=False, onlyDiff=False, 
+                 transFile='DC_cashback_Recharge_Payam_')
+```
+
+
+
+### Extracting datetime related string from date time
+reference for strftime : https://www.strfti.me/
 
 ## with file name containing date
+```python 
 oneday = datetime.timedelta(days=1)
 yesterday = (datetime.date.today() - oneday).strftime('%Y%m%d') # 20220521
 
