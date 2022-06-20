@@ -35,6 +35,39 @@ def data_cleaning(input_csv):
     
 df = data_cleaning('marketplace_cashback_20perc_20220517.csv')
 
+
+###################################################################
+sample_list = ['432355850033E505E', '432355850033E505E',
+'43235A678029F2217', '43235A678029F2217',
+'43235521F878F','43235521F878F',
+'43235A7747072','43235591C2FBE']
+df = pd.DataFrame(sample_list, columns=['CellID'])
+
+df['CellID']=  df.CellID.str[5:] # remove first 5 characters 
+df['Lenght'] = df.CellID.str.len() # extract length 
+
+df.loc[df['Lenght'] == 8,'TECH'] = '2G/3G'
+df.loc[df['Lenght'] == 12,'TECH'] = '4G'
+df.loc[df['TECH'].isna(),'TECH'] = 'Wrong input!'
+
+df.loc[df['TECH'] == '2G/3G', 'LAC'] =  df['CellID'].str[:4].apply(lambda x: int(x, 16)).astype(str)
+df.loc[df['TECH'] == '2G/3G', 'CI'] =  df['CellID'].str[4:].apply(lambda x: int(x, 16)).astype(str)
+
+
+df.loc[df['TECH'] == '4G', 'TAC'] =  df['CellID'].str[:4].apply(lambda x: int(x, 16)).astype(str)
+df.loc[df['TECH'] == '4G', 'ECI'] =  df['CellID'].str[4:].apply(lambda x: int(x, 16)).astype(str)
+
+
+df.loc[df['Lenght'] == 12,'TECH'] = '4G'
+
+
+A='318088A3'
+'{}{}'.format(int(A[:4], 16), int(A[-4:], 16))
+
+
+B='5850033E505E'
+'{}{}'.format(int(B[:4], 16), int(B[4:], 16))
+
 ###################################################################
 # Reordering, reindexing, and sorting data
 df[df.datatype == 'TAVG']. nlargest(n=10, columns='temp_C')
