@@ -13,14 +13,6 @@ But if you think of programming like playing the piano—a craft that can take [
 
 # Index of Jupyter (IPython) Notebooks
 
-For each notebook you can:
-- Click on [c](https://colab.research.google.com) to **run** the notebook on Colab
-- Click on [d](https://deepnote.com) to **run** the notebook on DeepNote
-- Click on [m](https://mybinder.org) to **run** the notebook on MyBinder
-- Click on [s](https://studiolab.sagemaker.aws/) to **run** the notebook on SageMaker Studio Lab
-- Click on [n](https://nbviewer.jupyter.org/) to **view** the notebook on NBViewer
-- Click on the title to **view** the notebook on github.
-- Hover over the title to **view** a description.
 
 
 
@@ -201,7 +193,9 @@ with pysftp.Connection('hostname', username='me', password='secret') as sftp:
 ### OS related
 |    |   Action 1    |Action 2|
 |----------|:-------------:|------:|
-| File | Make | delete |
+| File | 
+Make |
+delete |
 | Folder| Make | delete  |
 
 
