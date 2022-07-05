@@ -6,7 +6,7 @@ from os import chdir
 chdir('D:/.../Sample pipeline')
 
 def data_cleaning(input_csv):
-    df = (pd.read_csv(input_csv, parse_dates=['date', 'transaction_date'])   # basic read file. It is highly recommended to use `read_csv` features.  
+    df = (pd.read_csv(input_csv, parse_dates=['date', 'tansaction_rdate'])   # basic read file. It is highly recommended to use `read_csv` features.  
             .rename(columns=str.lower) # rename columns or change all to lower or upper
             .rename(columns= {'date':'date_key', 'customer_msisdn':'msisdn_nsk'}) # rename columns or change all to lower or upper
             .drop('payment_id', axis=1) # drop column or drop row
@@ -16,8 +16,7 @@ def data_cleaning(input_csv):
                     msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # add text - Concatenate in SQL
                     
                     # msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # regex usecase sample to be added
-                    
-                    
+                    tansaction=lambda x: x['tansaction'].replace({'%':''}, regex=True).astype('float'),  # remove '%' character from 'tansaction' column and convert to float
                     temp_hour=lambda x: x['transaction_date'].dt.hour)  # extract hour 
             .query('delearname in ("SNAPCAB", "SNAPFOOD", "SNAPMARKET")')   # filtering on column with `in`
             #.sort_values(by = ['granted_gift_irr'], ascending=False)
@@ -68,6 +67,18 @@ A='318088A3'
 B='5850033E505E'
 '{}{}'.format(int(B[:4], 16), int(B[4:], 16))
 
+###################################################################
+# remove english hidden characters https://pbpython.com/pandas-html-table.html
+# The issue here is that we have a hidden character, xa0 that is causing some errors. This is a “non-breaking Latin1 (ISO 8859-1) space”.
+from unicodedata import normalize
+
+def clean_normalize_whitespace(x):
+    if isinstance(x, str):
+        return normalize('NFKC', x).strip()
+    else:
+        return x
+
+# To check and make similar functionality for Persian 
 ###################################################################
 # Reordering, reindexing, and sorting data
 df[df.datatype == 'TAVG']. nlargest(n=10, columns='temp_C')
