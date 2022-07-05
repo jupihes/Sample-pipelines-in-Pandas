@@ -14,8 +14,7 @@ def data_cleaning(input_csv):
                     msisdn_nsk_clean=lambda x: x['msisdn_nsk'].astype(str).str[2:],  # get rid of the first 2 digits - substr in SQL
                     msisdn_lastdigit=lambda x: x['msisdn_nsk'].astype(str).str[-1],  # extract last digit to be used
                     msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # add text - Concatenate in SQL
-                    
-                    # msisdn_nsk_extended=lambda x: '935' + x['msisdn_nsk'].astype(str).str[2:] + '935',  # regex usecase sample to be added
+                    msisdn_check=lambda x: x['msisdn_nsk'].str.contains(r'\d{11}'),  # regex usecase sample: check if columns contains pattern of 11 decimal digit
                     tansaction=lambda x: x['tansaction'].replace({'%':''}, regex=True).astype('float'),  # remove '%' character from 'tansaction' column and convert to float
                     temp_hour=lambda x: x['transaction_date'].dt.hour)  # extract hour 
             .query('delearname in ("SNAPCAB", "SNAPFOOD", "SNAPMARKET")')   # filtering on column with `in`
