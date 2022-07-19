@@ -14,7 +14,7 @@ Very good to be reviewed on [programming](https://norvig.com/21-days.html)
 
 # Data pipeline management with coding 
 
-[] 1- [Data cleaning in read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
+[-]1- [Data cleaning in read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
 
 [] 2 - Data transform – in progress : Hesam & Farzaneh & Mehdi 
 
