@@ -12,7 +12,63 @@ Automate repetitve Data Eng tasks with programming.
 Very good to be reviewed on [programming](https://norvig.com/21-days.html) 
 
 
-# Index of Jupyter (IPython) Notebooks
+# Data pipeline management with coding 
+
+[] 1- [Data cleaning in read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
+
+[] 2 - Data transform – in progress : Hesam & Farzaneh & Mehdi 
+
+    1- Pivot - Farzaneh 
+
+    2- Binning - Hesam & Mehdi 
+
+[] 3- Data visualization and reporting - ?  
+
+    Email  
+
+        Make Excel, PDF attachment 
+
+        Add table to body of email 
+
+        Make plot as part of email HTML content 
+
+        Make HTML content 
+
+            Rich content 
+
+    Visualization  
+
+        Plotly or Bokeh 
+
+SQL – to be finished  
+
+    Read 
+
+    Write 
+
+    Bulk insert 
+
+        Make abstract function with parameters to handle these 
+
+        SQL Bulk insert with Python  
+
+FTP – in progress : Mehdi 
+
+    Read 
+
+    Write 
+
+    Make abstract function with parameters to handle these 
+
+What else?  
+
+    Multithread sample 
+
+    Subprocess sample 
+
+  
+
+# Index of codes
 
 
 
