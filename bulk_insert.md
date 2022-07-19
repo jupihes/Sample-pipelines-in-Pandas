@@ -1,4 +1,4 @@
-'''python
+```python
 # -*- coding: utf-8 -*-
 
 """ 
@@ -107,4 +107,4 @@ conn1 = connection_try.connect_db_alchemy()#sql_server_nm = sql_server_nm1, db_n
 #### inserting bunch of files ######
 connection_try.insert_folder_date(conn=conn1, db_table_nm=db_table_nm1
                                   ,from_day = -32, to_day =-1)
-'''
+```
