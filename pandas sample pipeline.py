@@ -8,6 +8,7 @@ chdir('D:/.../Sample pipeline')
 def data_cleaning(input_csv):
     df = (pd.read_csv(input_csv, parse_dates=['date', 'tansaction_rdate'])   # basic read file. It is highly recommended to use `read_csv` features.  
             .rename(columns=str.lower) # rename columns or change all to lower or upper
+            .rename(columns=lambda s: s.strip())  # to remove out of name 'spaces' in name of columns 
             .rename(columns= {'date':'date_key', 'customer_msisdn':'msisdn_nsk'}) # rename columns or change all to lower or upper
             .drop('payment_id', axis=1) # drop column or drop row
             .assign(date_key=lambda x: x['date_key'].dt.strftime('%Y%m%d'),  # make new columns from existintg - useful for calculation, data_time, change to categorical
