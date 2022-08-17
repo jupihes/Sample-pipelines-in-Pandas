@@ -1,13 +1,14 @@
 
-<div align="right" style="text-align:right"><i>Hesam, Mehdi and Farzaneh
-<br><a href="">?</a><br>2022</i></div> <!--https://github.com/norvig/pytudes/blob/main/LICENSE -->
+<div align="right" style="text-align:middle"><i>Hesam, Mehdi and Farzaneh
+<br><a href="">?</a><br>2022</i>
+</div>
 
 # Data pipeline managment samples with Python
 
 
 
 # Who is this for?
-Automate repetitve Data Eng tasks with programming. 
+Those looking for *automate repetitve Data Eng tasks with programming*. 
 
 Very good to be reviewed on [programming](https://norvig.com/21-days.html) 
 
@@ -18,6 +19,7 @@ Very good to be reviewed on [programming](https://norvig.com/21-days.html)
 2. Data transform – in progress : Hesam & Farzaneh & Mehdi 
     1- Pivot - Farzaneh 
     2- Binning - Hesam & Mehdi 
+    
 3. Data visualization and reporting - ?  
     1. Email  
     2. Make Excel, PDF attachment 
