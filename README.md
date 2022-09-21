@@ -38,10 +38,14 @@ Very good to be reviewed on [programming](https://norvig.com/21-days.html)
 5. FTP – in progress : Mehdi 
 
     . [Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp_read.py) 
+    
     . Write 
+    
     . Make abstract function with parameters to handle these 
+    
 6. Log file generation
-7. What else?  
+
+8. What else?  
     1. Multithread sample 
     2. Subprocess sample 
 
