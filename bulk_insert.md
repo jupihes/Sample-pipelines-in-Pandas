@@ -15,6 +15,7 @@
 import pyodbc
 from sqlalchemy import create_engine
 import datetime
+from os import chdir, listdir
 
 class c_bulk_insert:
     def __init__(self, csv_file_nm
