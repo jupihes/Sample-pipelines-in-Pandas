@@ -36,7 +36,8 @@ Very good to be reviewed on [programming](https://norvig.com/21-days.html)
         - SQL Bulk insert with Python 
         - Make abstract function with parameters to handle these 
 5. FTP – in progress : Mehdi 
-    . Read 
+
+    . [Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp_read.py) 
     . Write 
     . Make abstract function with parameters to handle these 
 6. Log file generation
