@@ -10,15 +10,16 @@
 # Who is this for?
 Those looking for *automate repetitve Data Eng tasks with programming*. 
 
-> Very good to be reviewed on [programming](https://norvig.com/21-days.html) 
+> Very good to read [Learn programming in 10 years](https://norvig.com/21-days.html) by Peter Norvig
 
 
 # Data pipeline management with coding 
 
 1. [Data cleaning in read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
 2. Data transform – in progress : Hesam & Farzaneh & Mehdi 
-    1- Pivot - Farzaneh 
-    2- Binning - Hesam & Mehdi 
+
+   1. Pivot - Farzaneh 
+   2. Binning - Hesam & Mehdi 
     
 3. Data visualization and reporting - ?  
     1. Email  
@@ -30,11 +31,14 @@ Those looking for *automate repetitve Data Eng tasks with programming*.
     6. Visualization  
         . Plotly or Bokeh 
 4. SQL – to be finished  
-    . Read 
-    . Write 
-    . Bulk insert 
+
+    1. Read 
+    2. Write 
+    3. Bulk insert 
+   
         - SQL Bulk insert with Python 
         - Make abstract function with parameters to handle these 
+        - 
 5. FTP – in progress : Mehdi 
 
     . [Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp_read.py) 
@@ -46,6 +50,7 @@ Those looking for *automate repetitve Data Eng tasks with programming*.
 6. Log file generation
 
 8. What else?  
+9. 
     1. Multithread sample 
     2. Subprocess sample 
 
