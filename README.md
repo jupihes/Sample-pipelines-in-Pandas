@@ -10,7 +10,7 @@
 # Who is this for?
 Those looking for *automate repetitve Data Eng tasks with programming*. 
 
-> Very good to read [Learn programming in 10 years](https://norvig.com/21-days.html) by Peter Norvig
+> Very good to read [Teach Yourself Programming in Ten Years](https://norvig.com/21-days.html) by [Peter Norvig](https://norvig.com)
 
 
 # Data pipeline management with coding 
@@ -34,7 +34,7 @@ Those looking for *automate repetitve Data Eng tasks with programming*.
 
     1. Read 
     2. Write 
-    3. Bulk insert 
+    3. [Bulk insert](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/bulk_insert.md)
    
         - SQL Bulk insert with Python 
         - Make abstract function with parameters to handle these 
@@ -45,7 +45,7 @@ Those looking for *automate repetitve Data Eng tasks with programming*.
     
     . Write 
     
-    . Make abstract function with parameters to handle these 
+    . [Class for FTP actions]() 
     
 6. Log file generation
 
