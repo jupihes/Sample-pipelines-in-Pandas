@@ -7,8 +7,8 @@ Created on Tue Jun 21 19:21:53 2022
 # based on what I saw at http://code.activestate.com/recipes/327141-simple-ftp-directory-synch/
 def moveFTPFiles(remotePath = './CVMDS/Direct_Channel_Cashback_Recharge/', 
                  serverName = '10.132.57.198',
-                 userName ='mahdi.d' ,
-                 passWord ='_M112233$$QQWW', 
+                 userName ='' ,
+                 passWord ='', 
                  localPath =  'E:/Reports/Cashback/',
                  deleteRemoteFiles=False, 
                  onlyDiff=False, 
@@ -17,41 +17,7 @@ def moveFTPFiles(remotePath = './CVMDS/Direct_Channel_Cashback_Recharge/',
                  from_date = '20220905' ,
                  to_date = '20220913'
                  ):
-    '''
-    
 
-    Parameters
-    ----------
-    remotePath : TYPE, optional
-        DESCRIPTION. The default is './CVMDS/Direct_Channel_Cashback_Recharge/'.
-    serverName : TYPE, optional
-        DESCRIPTION. The default is '10.132.57.198'.
-    userName : TYPE, optional
-        DESCRIPTION. The default is 'mahdi.d'.
-    passWord : TYPE, optional
-        DESCRIPTION. The default is '_M112233$$QQWW'.
-    localPath : TYPE, optional
-        DESCRIPTION. The default is 'E:/Reports/Cashback/'.
-    deleteRemoteFiles : TYPE, optional
-        DESCRIPTION. The default is False.
-    onlyDiff : TYPE, optional
-        DESCRIPTION. The default is False.
-    transFile_name_pattern : TYPE, optional
-        DESCRIPTION. The default is 'DC_cashback_Recharge_Payam_'.
-    past_n_day : TYPE, optional
-        DESCRIPTION. The default is 1.
-    # yesterday                 from_date : TYPE
-        DESCRIPTION.
-    to_date : TYPE
-        DESCRIPTION.
-     : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    None.
-
-    '''
     """Connect to an FTP server and bring down files to a local directory"""
     import os
     #import datetime
@@ -209,8 +175,8 @@ probe_file += str(unix_day((date.today() - timedelta(days = 1)).strftime('%Y%m%d
 ###############  sample without kwargs ###############
 # moveFTPFiles(remotePath = './CVMDS/Huawei/ITO/', 
 #                   serverName = '10.132.57.198',
-#                   userName ='mahdi.d' ,
-#                   passWord ='_M112233$$QQWW', 
+#                   userName ='' ,
+#                   passWord ='', 
 #                   localPath = '//t1w022/Datascience/Prob/' ,#'//t1w022/Datascience/Prob',#'E:/Reports/Prob/',
 #                   deleteRemoteFiles=False, 
 #                   onlyDiff=False, 
@@ -221,8 +187,8 @@ probe_file += str(unix_day((date.today() - timedelta(days = 1)).strftime('%Y%m%d
 ###############  sample with kwargs ###############
 input_dict = {'remotePath' : './CVMDS/Huawei/ITO/', 
                   'serverName' : '10.132.57.198',
-                  'userName' :'mahdi.d' ,
-                  'passWord' :'_M112233$$QQWW', 
+                  'userName' :'' ,
+                  'passWord' :'', 
                   'localPath' : '//t1w022/Datascience/Prob/',
                   'deleteRemoteFiles':False, 
                   'onlyDiff': False, }
@@ -232,21 +198,21 @@ moveFTPFiles(transFile_name_pattern= probe_file,
               past_n_day = 1, **input_dict)
 
 # moveFTPFiles(remotePath = './CVMDS/Direct_Channel_Cashback_Recharge/', 
-#                  serverName = '10.132.57.198', userName ='mahdi.d' ,
-#                  passWord ='_M112233$$QQ', localPath =  'D:/',
+#                  serverName = '10.132.57.198', userName ='' ,
+#                  passWord ='', localPath =  'D:/',
 #                  deleteRemoteFiles=False, onlyDiff=False, 
 #                  transFile_name_pattern='DC_cashback_Recharge_Payam_')
 
 
 # moveFTPFiles(remotePath = './CVMDS/Direct_Channel_cashback/', 
-#                  serverName = '10.132.57.198', userName ='mahdi.d' ,
-#                  passWord ='_M112233$$QQ', localPath =  'D:/',
+#                  serverName = '10.132.57.198', userName ='' ,
+#                  passWord ='', localPath =  'D:/',
 #                  deleteRemoteFiles=False, onlyDiff=False,  
 #                  transFile_name_pattern='DIRECT_CHANNEL_CASHBACK_')
 
 
 # moveFTPFiles(remotePath = './CVMDS/Marketplace_Cashback/', 
-#                  serverName = '10.132.57.198', userName ='mahdi.d' ,
-#                  passWord ='_M112233$$QQ', localPath =  'D:/',
+#                  serverName = '10.132.57.198', userName ='' ,
+#                  passWord ='', localPath =  'D:/',
 #                  deleteRemoteFiles=False, onlyDiff=False, 
 #                  transFile_name_pattern='marketplace_cashback_20perc_')
