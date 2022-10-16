@@ -10,7 +10,7 @@
 # Who is this for?
 Those looking for *automate repetitve Data Eng tasks with programming*. 
 
-Very good to be reviewed on [programming](https://norvig.com/21-days.html) 
+> Very good to be reviewed on [programming](https://norvig.com/21-days.html) 
 
 
 # Data pipeline management with coding 
@@ -56,10 +56,7 @@ Very good to be reviewed on [programming](https://norvig.com/21-days.html)
 
 
 |Run|Year|Code address|
-|---|---|---|
-| [c](https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/Advent-2020.ipynb) [d](https://beta.deepnote.org/launch?template=python_3.6&url=https%3A%2F%2Fgithub.com%2Fnorvig%2Fpytudes%2Fblob%2Fmain%2Fipynb%2FAdvent-2020.ipynb)  [m](https://mybinder.org/v2/gh/norvig/pytudes/main?filepath=ipynb%2FAdvent-2020.ipynb) [s](https://studiolab.sagemaker.aws/import/github/norvig/pytudes/blob/main/ipynb/Advent-2020.ipynb) [n](https://nbviewer.jupyter.org/github/norvig/pytudes/blob/main/ipynb/Advent-2020.ipynb) | 2021 | <b><a href="ipynb/Advent-2020.ipynb" title="Puzzle site with a coding puzzle each day for Advent 2021">Advent of Code 2021</a></b> |
-| [c](https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/Konane.ipynb) [d](https://beta.deepnote.org/launch?template=python_3.6&url=https%3A%2F%2Fgithub.com%2Fnorvig%2Fpytudes%2Fblob%2Fmain%2Fipynb%2FKonane.ipynb)  [m](https://mybinder.org/v2/gh/norvig/pytudes/main?filepath=ipynb%2FKonane.ipynb) [s](https://studiolab.sagemaker.aws/import/github/norvig/pytudes/blob/main/ipynb/Konane.ipynb) [n](https://nbviewer.jupyter.org/github/norvig/pytudes/blob/main/ipynb/Konane.ipynb) | 2021 | <b><a href="ipynb/Konane.ipynb" title="Solving the game of Konane (Hawaiian checkers).">Mel's Konane Board</a></b> |
-| [c](https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/KenKen.ipynb) [d](https://beta.deepnote.org/launch?template=python_3.6&url=https%3A%2F%2Fgithub.com%2Fnorvig%2Fpytudes%2Fblob%2Fmain%2Fipynb%2FKenKen.ipynb)  [m](https://mybinder.org/v2/gh/norvig/pytudes/main?filepath=ipynb%2FKenKen.ipynb) [s](https://studiolab.sagemaker.aws/import/github/norvig/pytudes/blob/main/ipynb/KenKen.ipynb) [n](https://nbviewer.jupyter.org/github/norvig/pytudes/blob/main/ipynb/KenKen.ipynb) | 2021 | <b><a href="ipynb/KenKen.ipynb" title="A Sudoku-like puzzle, but with arithmetic.">KenKen (Sudoku-like Puzzle)</a></b> |
+
 
 
 
