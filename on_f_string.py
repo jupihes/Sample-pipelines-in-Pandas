@@ -1,12 +1,10 @@
 
 # -*- coding: utf-8 -*-
-"""
-@author: hesam.mo
-"""
 
-
+### Typical python print
 print('%d %s cost $%.2f' % (6, 'bananas', 1.74))
 
+### python f_string print
 print(f"{6} {'bananas'} ")
 
 number = 6
@@ -14,6 +12,8 @@ text = 'bananas'
 number2 = 132.23423876
 print(f"{number} kjsdfhkjds :\n{text} \n number2 {number2:.3f} ")
 
+
+#### sample use case for date time 
 import datetime
 today = datetime.datetime.now()
 print(f"{havij:%B %d, %Y}") # November 30, 2022
@@ -24,7 +24,7 @@ print(f"Today is\n havij day \t {havij:%Y-%m-%d %H:%M}") # 2022-11-30 14:29
 Today = datetime.date.today()
 day_n_past = (Today-datetime.timedelta(days=5)).strftime('%Y%m%d') 
 
-
+#### sample use case for query string building
 for i in range(5):#date_list:
     day_n_past = (Today-datetime.timedelta(days=i)).strftime('%Y%m%d')
     temp_query = '''SELECT *
@@ -40,10 +40,10 @@ file_name = f'report_ITO_{today:%Y-%m-%d}.csv' # 2022-11-30
 
  f'{self.transFile_name_pattern}_{unix_day(temp_day)}_{datetime.strptime(temp_day, "%Y%m%d"):%Y%m%d}.csv' 
 
-https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python/
 
 
-
+### Goood reference
+[ormatted-string-literals-f-strings-python](https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python)
 
 
   
