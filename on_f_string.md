@@ -1,6 +1,4 @@
 
-# -*- coding: utf-8 -*-
-
 ### Typical python print
 ```python
 print('%d %s cost $%.2f' % (6, 'bananas', 1.74))
