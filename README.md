@@ -84,6 +84,7 @@ different
 | SFTP | Read | Write| 
 | [SQL](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/SQL%20via%20python.py) 
 |[SQL Bulk Insert]()
+|[SQL Bulk Insert with Logging]()
 [Read]() | [Write]()| 
 |Pandas| [Pipline for read & clean](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
 [sample data cleaning](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
