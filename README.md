@@ -49,6 +49,8 @@ Those looking for *automate repetitve Data Eng tasks with programming*.
     
 6. Log file generation
 
+[Bulk insert with logging](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/bulk_insert_logging.py)
+
 8. What else?  
 9. 
     1. Multithread sample 
@@ -83,8 +85,8 @@ different
 | FTP | [Read](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#read-files-from-ftp) | [Write](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/ftp%20actions.md#write-file-to-ftp)| 
 | SFTP | Read | Write| 
 | [SQL](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/SQL%20via%20python.py) 
-|[SQL Bulk Insert]()
-|[SQL Bulk Insert with Logging]()
+|[SQL Bulk Insert](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/bulk_insert.md)
+|[SQL Bulk Insert with Logging](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/bulk_insert_logging.py)
 [Read]() | [Write]()| 
 |Pandas| [Pipline for read & clean](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
 [sample data cleaning](https://github.com/jupihes/Sample-pipelines-in-Pandas/blob/main/pandas%20sample%20pipeline.py)
