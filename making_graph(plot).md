@@ -80,7 +80,9 @@ $ echo 'digraph { a -> b }' | dot -Tsvg > output.svg
 ## References
 
 - [Wikipedia DOT graph language](https://en.wikipedia.org/wiki/DOT_(graph_description_language))
+
 - [graphviz output](http://www.graphviz.org/doc/info/output.html)
+
 - [graphviz commandline](https://graphviz.org/doc/info/command.html)
 
  
