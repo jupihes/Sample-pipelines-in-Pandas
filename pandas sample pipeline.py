@@ -35,6 +35,43 @@ def data_cleaning(input_csv):
 df = data_cleaning('marketplace_cashback_20perc_20220517.csv')
 
 
+#######
+# Sample pandas method chaining
+import pandas as pd
+from os import chdir
+
+chdir(r'.../data')
+
+def data_cleaning(input_csv):
+    df = (pd.read_csv(input_csv, parse_dates=['date', 'tansaction_rdate'])   # basic read file. It is highly recommended to use `read_csv` features.
+            .rename(columns=str.lower) # rename columns or change all to lower or upper
+            .rename(columns=lambda s: s.strip())  # to remove out of name 'spaces' in name of columns
+            .rename(columns= {'date':'date_key', 'customer_id':'id_number'}) # rename columns or change all to lower or upper
+            .drop('payment_id', axis=1) # drop column or drop row
+            .assign(date_key=lambda x: x['date_key'].dt.strftime('%Y%m%d'),  # make new columns from existintg - useful for calculation, data_time, change to categorical
+                    id_number_clean=lambda x: x['id_number'].astype(str).str[2:],  # get rid of the first 2 digits - substr in SQL
+                    id_number_lastdigit=lambda x: x['id_number'].astype(str).str[-1],  # extract last digit to be used
+                    id_number_extended=lambda x: '1' + x['id_number'].astype(str).str[2:] + '935',  # add text - Concatenate in SQL
+                    id_number_check=lambda x: x['id_number'].str.contains(r'\d{11}'),  # regex usecase sample: check if columns contains pattern of 11 decimal digit
+                    tansaction=lambda x: x['tansaction'].replace({'%':''}, regex=True).astype('float'),  # remove '%' character from 'tansaction' column and convert to float
+                    transaction_hour=lambda x: x['transaction_date'].dt.hour)  # extract hour
+            .query('delearname in ("CAB", "FOOD", "MARKET")')   # filtering on column with `in`
+            #.sort_values(by = ['granted_gift_irr'], ascending=False)
+            .assign(rank=lambda x: x.sort_values(['granted_gift_irr', 'id_number_lastdigit','transaction_hour'], #  make rank based on 3 columns; similar to `SQL` partition by
+                                                 ascending=(False, True, True)
+                                                 )
+                    .groupby(['date_key', 'id_number_lastdigit'])
+                    .cumcount()
+                    + 1
+                    )
+            .query("rank < 3")
+            .sort_values(["date_key", "rank"])  # sort values
+          )
+    return df
+
+df = data_cleaning('cashback_data_20250517.csv')
+
+
 ###################################################################
 sample_list = ['432355850033E505E', '432355850033E505E',
 '43235A678029F2217', '43235A678029F2217',
